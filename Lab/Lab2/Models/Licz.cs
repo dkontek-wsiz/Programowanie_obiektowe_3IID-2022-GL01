@@ -2,16 +2,26 @@
 {
     public class Licz
     {
-        public int Value;
+        private int _value;
+
+        public Licz(int value)
+        {
+            _value = value;
+        }
 
         public void Dodaj(int add)
         {
-            Value += add;
+            _value += add;
         }
 
         public void Oddejmnij(int sub)
         {
-            Value -= sub;
+            _value -= sub;
+        }
+
+        public int GetValue()
+        {
+            return _value;
         }
     }
 }
