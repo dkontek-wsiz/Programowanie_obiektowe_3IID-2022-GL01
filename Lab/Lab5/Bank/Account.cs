@@ -10,5 +10,16 @@ namespace Lab5.Bank
 
         public static double Income { get; set; }
         public static double Expense { get; set; }
+
+        public void DisplaySumary()
+        {
+            Console.WriteLine($"Income: {Income}, Expense: {Expense}, Total: {Income + Expense}");
+        }
+
+        public void Add(Transaction transaction)
+        {
+            Transactions.Add(transaction);
+            transaction.ProcessTransaction();
+        }
     }
 }

@@ -8,7 +8,21 @@ namespace Lab5
     {
         static void Main(string[] args)
         {
-            Zad1();
+            Zad2();
+        }
+
+        private static void Zad2()
+        {
+            var account = new Account();
+
+            account.Add(new IncomeTransaction() { Amount = 400 });
+            account.Add(new IncomeTransaction() { Amount = 500 });
+            account.Add(new IncomeTransaction() { Amount = 600 });
+            account.Add(new ExpenseTransaction() { Amount = 600 });
+            account.Add(new ExpenseTransaction() { Amount = 400 });
+            account.Add(new ExpenseTransaction() { Amount = 200 });
+
+            account.DisplaySumary();
         }
 
         static void Zad1()
