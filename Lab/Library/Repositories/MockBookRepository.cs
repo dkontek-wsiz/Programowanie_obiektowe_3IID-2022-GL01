@@ -12,6 +12,7 @@ namespace Library.Repositories
 
         public void Create(Book item)
         {
+            item.Id = data.Count + 1;
             data.Add(item);
         }
 
