@@ -40,5 +40,15 @@ namespace Library.Repositories
             if (index > -1)
                 data[index] = item;
         }
+
+        public List<Book> GetBooksByAuthor(string author)
+        {
+            return data.Where(x => x.Author == author).ToList();
+        }
+
+        public List<Book> GetBooksByPublishYear(int year)
+        {
+            return data.Where(x => x.PublishYear == year).ToList();
+        }
     }
 }

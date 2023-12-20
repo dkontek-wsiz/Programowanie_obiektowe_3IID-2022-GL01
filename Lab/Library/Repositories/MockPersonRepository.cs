@@ -12,6 +12,7 @@ namespace Library.Repositories
 
         public void Create(Person item)
         {
+            item.Id = data.Count + 1;
             data.Add(item);
         }
 
@@ -38,6 +39,20 @@ namespace Library.Repositories
 
             if (index > -1)
                 data[index] = item;
+        }
+
+        public void BorrowBook(long id, Book book)
+        {
+            var person = Get(id);
+            if (person == null)
+                return;
+
+            person.BorrowedBooks.Add(book);
+        }
+
+        public List<Book> GetBorrowedBook(long id)
+        {
+            return Get(id)?.BorrowedBooks ?? new List<Book>();
         }
     }
 }

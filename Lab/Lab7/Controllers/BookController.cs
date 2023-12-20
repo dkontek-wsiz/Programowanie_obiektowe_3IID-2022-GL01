@@ -47,5 +47,18 @@ namespace Lab7.Controllers
         {
             _bookRepository.Update(input);
         }
+
+        [HttpGet]
+        public List<Book> GetBooksByAuthor(string author)
+        {
+            return _bookRepository.GetBooksByAuthor(author);
+        }
+
+        [HttpGet]
+        public List<Book> GetBooksByPublishYear(int year)
+        {
+            return _bookRepository.GetBooksByPublishYear(year);
+        }
+
     }
 }
